@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rsvps</groupId>
-    <artifactId>CollectRsvpsAndDisplayOnScreen</artifactId>
+    <artifactId>CollectRsvpsAndSendToKafka</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>CollectRsvpsAndDisplayOnScreen</name>
-    <description>Collect RSVPs from Meetup endpoint and display them on screen</description>
+    <name>CollectRsvpsAndSendToKafka</name>
+    <description>Collecting RSVPs from Meetup endpoint and send them to Kafka</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,6 +29,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

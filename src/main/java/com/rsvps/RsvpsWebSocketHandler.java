@@ -12,6 +12,12 @@ class RsvpsWebSocketHandler extends AbstractWebSocketHandler {
 
     private static final Logger logger =
             Logger.getLogger(RsvpsWebSocketHandler.class.getName());
+//    Dependency injection from kafkaproducer instance
+    private final RsvpsKafkaProducer rsvpsKafkaProducer;
+
+    public RsvpsWebSocketHandler(RsvpsKafkaProducer rsvpsKafkaProducer) {
+        this.rsvpsKafkaProducer = rsvpsKafkaProducer;
+    }
 
     @Override
     public void handleMessage(WebSocketSession session,
